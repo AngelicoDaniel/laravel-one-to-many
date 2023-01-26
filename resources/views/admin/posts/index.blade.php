@@ -9,6 +9,7 @@
             <th scope="col">id</th>
             <th scope="col">title</th>
             <th scope="col">body</th>
+            <th scope="col">category_id</th>
             <th scope="col">actions</th>
           </tr>
         </thead>
@@ -22,6 +23,11 @@
                         </a>
                     </td>
                     <td>{{$post->body}}</td>
+                    <td>
+                        @if ($post->category)
+                            {{$post->category['name']}}
+                        @endif
+                    </td>
                     <td>
                         <a href="{{route('admin.posts.edit', $post->id)}}">
                             Edit
